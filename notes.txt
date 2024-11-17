@@ -1,0 +1,28 @@
+The feed, a tool that helps subscribe to topics through different social media and automatically aggregate different posts by subject
+
+ - goals be able to expose and interact with lots of different media and posts from different sources
+
+This idea very much has been around and there are several apps that do this: (They are called RSS readers)
+ - Inoreader
+ - and many many more
+
+Feed sources:
+
+    General:
+    - reddit API: https://www.reddit.com/dev/api/
+    - youtube search API
+    - twitter API: stream endpoint: https://developer.x.com/en/docs/x-api/tweets/filtered-stream/api-reference/get-tweets-search-stream
+
+    Tech specific feeds:
+        - hacker news: https://github.com/HackerNews/API
+        - github (Topics, trending): https://docs.github.com/en/rest/search/search
+
+        - news sites:
+            - Developer tech: https://www.developer-tech.com/
+            - wired: https://www.wired.com/tag/programming/
+            - alternativeto: https://alternativeto.net/
+
+
+ - adding urls to a topic that could be indexed automatically (i.e. Iniqo Quillez, articles page)
+
+
