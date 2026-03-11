@@ -6,6 +6,7 @@ import lustre
 import lustre/effect
 import lustre/element/html
 import lustre/server_component
+import reddit_scraper
 
 pub type Dashboard {
   Dashboard(posts: List(String))
@@ -23,11 +24,8 @@ fn init(_model: Dashboard) -> #(Dashboard, effect.Effect(Msg)) {
   #(
     Dashboard([]),
     server_component.select(fn(_, subject: process.Subject(List(String))) {
-      feeds.start_feed(
-        feeds.create_reddit_polling_state("politics"),
-        feeds.reddit_poller,
-      )
-      |> process.send(feeds.Subscribe(subject))
+      reddit_scraper.start_feed("politics")
+      |> feeds.subscribe(subject)
 
       process.new_selector()
       |> process.select_map(subject, FeedUpdated)
